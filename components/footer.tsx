@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Twitter, MessageSquare } from "lucide-react";
+import { Twitter, MessageSquare } from "lucide-react";
 
 const FOOTER_LINKS = {
   Product: [
@@ -19,7 +19,6 @@ const FOOTER_LINKS = {
 };
 
 const SOCIALS = [
-  { label: "GitHub", href: "https://github.com/Panda-0x01/neoNet", icon: Github },
   { label: "Twitter", href: "https://twitter.com", icon: Twitter },
   { label: "Community chat", href: "https://github.com/Panda-0x01/neoNet/discussions", icon: MessageSquare },
 ];

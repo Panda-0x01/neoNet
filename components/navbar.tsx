@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Github } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -64,17 +64,8 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href="https://github.com/Panda-0x01/neoNet"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/70 bg-panel text-fg-muted shadow-neu-sm transition-colors hover:text-accent-green"
-            aria-label="View neoNet on GitHub (opens in a new tab)"
-          >
-            <Github className="h-4 w-4" aria-hidden="true" />
-          </a>
           <Button size="sm" asChild>
-            <a href="#cli">Get started</a>
+            <a href="#cli">Join Waitlist</a>
           </Button>
         </div>
 
@@ -106,7 +97,7 @@ export function Navbar() {
             <li className="flex items-center gap-3 pt-2">
               <Button size="sm" className="w-full" asChild>
                 <a href="#cli" onClick={() => setOpen(false)}>
-                  Get started
+                  Join Waitlist
                 </a>
               </Button>
             </li>

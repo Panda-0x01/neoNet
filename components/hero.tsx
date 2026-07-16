@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Countdown } from "@/components/countdown";
 import { HeroScan } from "@/components/hero-scan";
@@ -78,18 +78,8 @@ export function Hero() {
           >
             <Button size="lg" asChild>
               <a href="#cli">
-                Get started
+                Join Waitlist
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </Button>
-            <Button size="lg" variant="secondary" asChild>
-              <a
-                href="https://github.com/Panda-0x01/neoNet"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BookOpen className="h-4 w-4" aria-hidden="true" />
-                View documentation
               </a>
             </Button>
           </motion.div>

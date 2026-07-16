@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CodeLine } from "@/components/code-line";
 
@@ -31,13 +30,8 @@ export function CtaBand() {
             <CodeLine command="curl -fsSL https://raw.githubusercontent.com/Panda-0x01/neoNet/main/install.sh | bash" />
           </div>
           <Button size="lg" className="mt-6" asChild>
-            <a
-              href="https://github.com/Panda-0x01/neoNet"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Star it on GitHub
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <a href="#cli">
+              Join Waitlist
             </a>
           </Button>
         </motion.div>
