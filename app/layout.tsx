@@ -4,18 +4,18 @@ import "./globals.css";
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-mono",
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 const sans = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 const siteUrl = "https://neonet.dev";

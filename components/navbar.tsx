@@ -34,23 +34,23 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-lg"
+          ? "border-b border-border bg-background/70 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       )}
     >
       <nav
         aria-label="Primary"
-        className="container flex h-16 items-center justify-between"
+        className="container flex h-14 items-center justify-between"
       >
-        <a href="#top" className="flex items-center gap-2 text-[15px] font-semibold">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card shadow-sm overflow-hidden">
-            <Image src="/neonet.png" alt="neoNet logo" width={28} height={28} className="object-contain" />
+        <a href="#top" className="flex items-center gap-2 text-sm font-medium">
+          <span className="flex h-7 w-7 items-center justify-center rounded-md border border-border bg-card overflow-hidden">
+            <Image src="/neonet.png" alt="neoNet logo" width={24} height={24} className="object-contain" />
           </span>
           <span className="text-foreground">neo</span>
           <span className="text-accent-green">Net</span>
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
@@ -63,7 +63,10 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
+          <Button size="sm" variant="ghost" asChild>
+            <a href="https://github.com/Panda-0x01/neoNet" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </Button>
           <Button size="sm" asChild>
             <a href="#cli">Get Started</a>
           </Button>
@@ -71,7 +74,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-foreground shadow-sm md:hidden"
+          className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-card text-foreground md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -81,21 +84,26 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
-          <ul className="flex flex-col gap-4">
+        <div className="border-t border-border bg-background/95 backdrop-blur-xl px-4 py-3 md:hidden">
+          <ul className="flex flex-col gap-2">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block text-sm text-muted-foreground hover:text-foreground"
+                  className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </a>
               </li>
             ))}
-            <li className="flex items-center gap-3 pt-2">
-              <Button size="sm" className="w-full" asChild>
+            <li className="mt-2 flex flex-col gap-2">
+              <Button size="sm" variant="outline" asChild>
+                <a href="https://github.com/Panda-0x01/neoNet" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+                  GitHub
+                </a>
+              </Button>
+              <Button size="sm" asChild>
                 <a href="#cli" onClick={() => setOpen(false)}>
                   Get Started
                 </a>

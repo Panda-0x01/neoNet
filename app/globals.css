@@ -14,11 +14,14 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv02" on;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: rgba(34, 197, 94, 0.15);
-    color: #0f1026;
+    background-color: rgba(34, 197, 94, 0.25);
+    color: #fafafa;
   }
 
   :focus-visible {
