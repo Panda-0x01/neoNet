@@ -7,6 +7,7 @@ const mono = JetBrains_Mono({
   weight: ["400", "500", "600", "700"],
   variable: "--font-mono",
   display: "swap",
+  preload: false,
 });
 
 const sans = Inter({
@@ -14,6 +15,7 @@ const sans = Inter({
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sans",
   display: "swap",
+  preload: false,
 });
 
 const siteUrl = "https://neonet.dev";
@@ -62,7 +64,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#E9EDF3",
+  themeColor: "#ffffff",
   colorScheme: "light",
 };
 
@@ -76,7 +78,7 @@ export default function RootLayout({
       <body className="font-sans">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent-green focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
         >
           Skip to content
         </a>

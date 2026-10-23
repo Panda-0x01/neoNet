@@ -32,9 +32,9 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={cn(
-        "sticky top-0 z-50 w-full transition-colors duration-300",
+        "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "border-b border-line bg-void/85 backdrop-blur-md"
+          ? "border-b border-border bg-background/80 backdrop-blur-lg"
           : "border-b border-transparent bg-transparent"
       )}
     >
@@ -42,11 +42,11 @@ export function Navbar() {
         aria-label="Primary"
         className="container flex h-16 items-center justify-between"
       >
-        <a href="#top" className="flex items-center gap-2 font-mono text-[15px] font-semibold">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/70 bg-panel shadow-neu-sm overflow-hidden">
+        <a href="#top" className="flex items-center gap-2 text-[15px] font-semibold">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card shadow-sm overflow-hidden">
             <Image src="/neonet.png" alt="neoNet logo" width={28} height={28} className="object-contain" />
           </span>
-          <span className="text-fg">neo</span>
+          <span className="text-foreground">neo</span>
           <span className="text-accent-green">Net</span>
         </a>
 
@@ -55,7 +55,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-mono text-[13px] text-fg-muted transition-colors hover:text-accent-green"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -65,13 +65,13 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Button size="sm" asChild>
-            <a href="#cli">Join Waitlist</a>
+            <a href="#cli">Get Started</a>
           </Button>
         </div>
 
         <button
           type="button"
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/70 bg-panel text-fg shadow-neu-sm md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-foreground shadow-sm md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -81,13 +81,13 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-line bg-void px-6 py-4 md:hidden">
+        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block font-mono text-sm text-fg-muted hover:text-accent-green"
+                  className="block text-sm text-muted-foreground hover:text-foreground"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
@@ -97,7 +97,7 @@ export function Navbar() {
             <li className="flex items-center gap-3 pt-2">
               <Button size="sm" className="w-full" asChild>
                 <a href="#cli" onClick={() => setOpen(false)}>
-                  Join Waitlist
+                  Get Started
                 </a>
               </Button>
             </li>

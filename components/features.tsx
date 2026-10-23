@@ -43,17 +43,17 @@ const item = {
 
 export function Features() {
   return (
-    <section id="features" className="relative border-t border-line py-24">
+    <section id="features" className="relative border-t border-border py-24 sm:py-32">
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow">Modules</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-            Everything you&rsquo;d otherwise stitch together yourself
+          <p className="text-sm font-medium text-accent-green">Modules</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            Everything you need for recon
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-fg-muted">
-            Ten modules covering the recon and analysis work most engagements
-            start with, available from the interactive menu or as direct CLI
-            flags for scripting.
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Ten modules covering the reconnaissance and analysis work most
+            engagements start with, available from the interactive menu or as
+            direct CLI flags for scripting.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export function Features() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {MODULES.map((mod) => {
             const Icon = ICONS[mod.id] ?? Radar;
@@ -70,26 +70,28 @@ export function Features() {
               <motion.div
                 key={mod.id}
                 variants={item}
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/70 bg-panel p-6 shadow-neu transition-shadow hover:shadow-neu-green"
+                whileHover={{ y: -2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md hover:border-accent-green/30"
               >
                 <div
-                  className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-green/0 blur-2xl transition-colors duration-300 group-hover:bg-accent-green/10"
+                  className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-accent-green/0 blur-3xl transition-colors duration-500 group-hover:bg-accent-green/5"
                   aria-hidden="true"
                 />
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/70 bg-panel text-accent-green shadow-neu-inset-sm">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                <div className="relative">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-muted/50 text-accent-green">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold">
+                    {mod.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {mod.description}
+                  </p>
+                  <code className="mt-4 block truncate rounded-lg border border-border bg-muted/50 px-3 py-2 font-mono text-xs text-blue-600">
+                    {mod.command}
+                  </code>
                 </div>
-                <h3 className="mt-4 font-sans text-base font-semibold text-fg">
-                  {mod.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                  {mod.description}
-                </p>
-                <code className="mt-4 block truncate rounded-lg border border-black/[0.04] bg-panel px-3 py-2 font-mono text-xs text-accent-blue shadow-neu-inset-sm">
-                  {mod.command}
-                </code>
               </motion.div>
             );
           })}

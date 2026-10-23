@@ -25,22 +25,22 @@ const SOCIALS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-line py-16">
+    <footer className="border-t border-border py-16">
       <div className="container">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
-          <div className="col-span-2 sm:col-span-1">
-            <a href="#top" className="flex items-center gap-2 font-mono text-[15px] font-semibold">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/70 bg-panel shadow-neu-sm overflow-hidden">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 lg:grid-cols-5">
+          <div className="col-span-2 lg:col-span-2">
+            <a href="#top" className="flex items-center gap-2 text-[15px] font-semibold">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card shadow-sm overflow-hidden">
                 <Image src="/neonet.png" alt="neoNet logo" width={28} height={28} className="object-contain" />
               </span>
-              <span className="text-fg">neo</span>
+              <span>neo</span>
               <span className="text-accent-green">Net</span>
             </a>
-            <p className="mt-4 max-w-[220px] text-sm leading-relaxed text-fg-muted">
-              A cross-platform CLI toolkit for network recon and security
-              analysis. MIT licensed.
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              A cross-platform CLI toolkit for network reconnaissance and
+              security analysis. Built for speed, simplicity, and reliability.
             </p>
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-5 flex items-center gap-2">
               {SOCIALS.map((s) => (
                 <a
                   key={s.label}
@@ -48,7 +48,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${s.label} (opens in a new tab)`}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/70 bg-panel text-fg-muted shadow-neu-sm transition-colors hover:text-accent-green"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground shadow-sm transition-colors hover:text-foreground hover:bg-muted"
                 >
                   <s.icon className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -58,7 +58,7 @@ export function Footer() {
 
           {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
             <div key={heading}>
-              <h3 className="font-mono text-xs uppercase tracking-[0.15em] text-fg-dim">
+              <h3 className="text-sm font-semibold">
                 {heading}
               </h3>
               <ul className="mt-4 space-y-3">
@@ -68,7 +68,7 @@ export function Footer() {
                       href={link.href}
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-sm text-fg-muted transition-colors hover:text-accent-green"
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link.label}
                     </a>
@@ -79,12 +79,12 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 sm:flex-row">
-          <p className="font-mono text-xs text-fg-dim">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} neoNet. Released under the MIT
             License.
           </p>
-          <p className="text-center font-mono text-xs text-fg-dim sm:text-right">
+          <p className="text-center text-sm text-muted-foreground sm:text-right">
             For authorized security testing only.
           </p>
         </div>

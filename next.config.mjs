@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  experimental: {
+    optimizeFonts: false,
+  },
 };
 
 export default nextConfig;

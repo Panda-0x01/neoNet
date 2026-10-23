@@ -16,35 +16,68 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Soft, slightly cool light gray — the neumorphic base surface.
-        void: "#E9EDF3",
-        panel: "#EEF1F6",
-        panel2: "#E4E8EF",
-        line: "#E4E8EF",
-        "line-bright": "#D2D9E2",
-        fg: {
-          DEFAULT: "#2B3444",
-          muted: "#616D7E",
-          dim: "#8D96A5",
+        background: "#ffffff",
+        foreground: "#0f1026",
+        card: "#ffffff",
+        "card-foreground": "#0f1026",
+        popover: "#ffffff",
+        "popover-foreground": "#0f1026",
+        primary: {
+          DEFAULT: "#22c55e",
+          foreground: "#ffffff",
+        },
+        secondary: {
+          DEFAULT: "#f8fafc",
+          foreground: "#0f1026",
+        },
+        muted: {
+          DEFAULT: "#f1f5f9",
+          foreground: "#475569",
         },
         accent: {
-          green: "#149355",
-          "green-dim": "#0E7443",
-          amber: "#C8811A",
-          blue: "#2F66D9",
-          red: "#D6394A",
-          violet: "#7C5CE0",
+          DEFAULT: "#f1f5f9",
+          foreground: "#0f1026",
+          green: "#22c55e",
+          "green-600": "#16a34a",
+          "green-dim": "#15803d",
+          blue: "#2563eb",
+          violet: "#7c3aed",
+          amber: "#f59e0b",
+          red: "#ef4444",
+        },
+        destructive: {
+          DEFAULT: "#ef4444",
+          foreground: "#ffffff",
+        },
+        border: "#e5e7eb",
+        input: "#e5e7eb",
+        ring: "#22c55e",
+        // Keep legacy tokens for compatibility during transition
+        void: "#f8fafc",
+        panel: "#ffffff",
+        panel2: "#f8fafc",
+        line: "#e5e7eb",
+        "line-bright": "#cbd5e1",
+        fg: {
+          DEFAULT: "#0f1026",
+          muted: "#475569",
+          dim: "#64748b",
         },
       },
       boxShadow: {
-        neu: "9px 9px 20px rgba(163,177,198,0.55), -9px -9px 20px rgba(255,255,255,0.9)",
-        "neu-sm": "5px 5px 12px rgba(163,177,198,0.5), -5px -5px 12px rgba(255,255,255,0.85)",
-        "neu-lg": "16px 16px 34px rgba(163,177,198,0.55), -14px -14px 30px rgba(255,255,255,0.9)",
-        "neu-inset":
-          "inset 4px 4px 10px rgba(163,177,198,0.55), inset -4px -4px 10px rgba(255,255,255,0.85)",
-        "neu-inset-sm":
-          "inset 2px 2px 6px rgba(163,177,198,0.5), inset -2px -2px 6px rgba(255,255,255,0.8)",
-        "neu-green": "0 0 0 1px rgba(20,147,85,0.18), 0 14px 32px -12px rgba(20,147,85,0.4)",
+        sm: "0 1px 2px 0 rgb(0 0 0 / 0.02)",
+        DEFAULT: "0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05)",
+        md: "0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05)",
+        lg: "0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)",
+        xl: "0 25px 50px -12px rgb(0 0 0 / 0.08)",
+        "glow-green": "0 0 0 1px rgb(34 197 94 / 0.1), 0 10px 40px -10px rgb(34 197 94 / 0.4)",
+        // Legacy neumorphic shadows (deprecated but kept for safety)
+        neu: "0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05)",
+        "neu-sm": "0 1px 2px 0 rgb(0 0 0 / 0.02)",
+        "neu-lg": "0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)",
+        "neu-inset": "inset 0 2px 4px 0 rgb(0 0 0 / 0.02)",
+        "neu-inset-sm": "inset 0 1px 2px 0 rgb(0 0 0 / 0.02)",
+        "neu-green": "0 0 0 1px rgb(34 197 94 / 0.1), 0 10px 40px -10px rgb(34 197 94 / 0.4)",
       },
       fontFamily: {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
@@ -52,9 +85,10 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-pattern":
-          "linear-gradient(to right, #D6DDE7 1px, transparent 1px), linear-gradient(to bottom, #D6DDE7 1px, transparent 1px)",
+          "linear-gradient(to right, rgb(226 232 240 / 0.6) 1px, transparent 1px), linear-gradient(to bottom, rgb(226 232 240 / 0.6) 1px, transparent 1px)",
         "radial-fade":
-          "radial-gradient(circle at 50% 0%, rgba(20,147,85,0.10), transparent 60%)",
+          "radial-gradient(circle at 50% 0%, rgba(34,197,94,0.08), transparent 60%)",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       backgroundSize: {
         grid: "40px 40px",
