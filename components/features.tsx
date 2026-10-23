@@ -44,35 +44,28 @@ const item = {
 export function Features() {
   return (
     <section id="features" className="relative py-24 sm:py-32">
-      <div className="container">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium text-accent-green">Modules</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-            All the tools you need, in one place
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Everything you need
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Ten purpose-built modules covering reconnaissance, enumeration, and
-            analysis workflows for security professionals.
+          <p className="mt-4 text-lg text-muted-foreground">
+            Ten modules built to cover the full reconnaissance workflow, from
+            initial scanning to detailed analysis.
           </p>
         </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {MODULES.map((mod) => {
             const Icon = ICONS[mod.id] ?? Radar;
             return (
-              <motion.div
+              <div
                 key={mod.id}
-                variants={item}
-                className="group relative bg-card p-6 transition-colors hover:bg-card/80"
+                className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 transition-colors hover:bg-card/70"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-muted/50 text-accent-green">
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">
+                  <Icon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 </div>
                 <h3 className="mt-4 text-base font-medium">
                   {mod.title}
@@ -80,13 +73,15 @@ export function Features() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {mod.description}
                 </p>
-                <code className="mt-4 block truncate rounded-md bg-muted/50 px-2.5 py-1.5 font-mono text-xs text-foreground/80">
-                  {mod.command}
-                </code>
-              </motion.div>
+                <div className="mt-4 overflow-x-auto rounded-md bg-black/40 px-2.5 py-1.5">
+                  <code className="font-mono text-xs text-muted-foreground">
+                    {mod.command}
+                  </code>
+                </div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -17,30 +17,28 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pb-16 pt-24 sm:pt-32 lg:pt-40">
+    <section id="top" className="relative overflow-hidden pb-20 pt-32 sm:pt-40 lg:pt-48">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(34,197,94,0.15),transparent)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,255,255,0.05),transparent)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-[0.15] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]"
         aria-hidden="true"
       />
 
-      <div className="container relative">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <motion.div
             custom={0}
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-2.5 py-1 text-xs backdrop-blur-sm"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs"
           >
-            <span className="flex items-center gap-1.5 rounded-full bg-accent-green/10 px-2 py-0.5 text-accent-green">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-green" />
-              New
-            </span>
-            <span className="text-muted-foreground">v2.0.0 now available</span>
+            <span className="text-muted-foreground">Cross-platform CLI toolkit</span>
+            <span className="text-border">•</span>
+            <span className="text-accent-green">v2.0.0</span>
           </motion.div>
 
           <motion.h1
@@ -48,13 +46,11 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-balance text-5xl font-semibold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
           >
-            Network reconnaissance
+            Reconnaissance
             <br />
-            <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
-              in one CLI
-            </span>
+            <span className="text-muted-foreground">made simple</span>
           </motion.h1>
 
           <motion.p
@@ -64,9 +60,9 @@ export function Hero() {
             animate="show"
             className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
-            A production-ready, cross-platform CLI toolkit for network
-            reconnaissance and security analysis. Nmap, DNS, WHOIS, subdomains,
-            SSL inspection and more — zero external dependencies.
+            neoNet unifies Nmap, DNS, WHOIS, subdomain enumeration, SSL
+            inspection, and more into a single, dependency-free CLI built for
+            speed and reliability.
           </motion.p>
 
           <motion.div
@@ -74,56 +70,46 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-8 flex flex-col items-center gap-2 sm:flex-row"
+            className="mt-10 flex flex-col items-center gap-2 sm:flex-row"
           >
-            <Button size="lg" asChild>
+            <Button size="lg" className="rounded-full px-6" asChild>
               <a href="#cli">
-                Get Started
+                Get started
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </Button>
-            <Button size="lg" variant="ghost" asChild>
-              <a href="#features">
-                View Modules
+            <Button size="lg" variant="ghost" className="rounded-full px-6" asChild>
+              <a href="https://github.com/Panda-0x01/neoNet" target="_blank" rel="noopener noreferrer">
+                View on GitHub
               </a>
             </Button>
-          </motion.div>
-
-          <motion.div
-            custom={4}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="mt-10"
-          >
-            <Countdown />
           </motion.div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 48 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-          className="relative mx-auto mt-16 max-w-5xl"
+          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mx-auto mt-20 max-w-6xl"
         >
           <div
-            className="pointer-events-none absolute -inset-x-40 -top-40 -z-10 h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(34,197,94,0.12),transparent_70%)] blur-3xl"
+            className="pointer-events-none absolute -inset-x-60 -top-60 -z-10 h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_70%)] blur-3xl"
             aria-hidden="true"
           />
-          <div className="relative overflow-hidden rounded-lg border border-border bg-card/80 shadow-2xl shadow-black/40 backdrop-blur">
-            <div className="flex items-center gap-2 border-b border-border px-4 py-2.5">
+          <div className="relative overflow-hidden rounded-xl border border-border bg-card shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+            <div className="flex items-center justify-between border-b border-border px-4 py-2">
               <div className="flex items-center gap-1.5">
-                <div className="h-3 w-3 rounded-full bg-[#ff5f56]" />
-                <div className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
-                <div className="h-3 w-3 rounded-full bg-[#27c93f]" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
               </div>
-              <div className="ml-4 flex-1 text-center text-xs text-muted-foreground">
-                neonet — terminal
-              </div>
+              <div className="text-xs text-muted-foreground">~/neonet</div>
+              <div className="w-14" />
             </div>
             <HeroScan />
           </div>
         </motion.div>
+      </div>
       </div>
     </section>
   );

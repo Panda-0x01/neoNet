@@ -32,25 +32,24 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "border-b border-border bg-background/70 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
+          ? "border-b border-border bg-background/80 backdrop-blur-xl"
+          : "bg-transparent"
       )}
     >
       <nav
         aria-label="Primary"
-        className="container flex h-14 items-center justify-between"
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
       >
-        <a href="#top" className="flex items-center gap-2 text-sm font-medium">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md border border-border bg-card overflow-hidden">
-            <Image src="/neonet.png" alt="neoNet logo" width={24} height={24} className="object-contain" />
-          </span>
-          <span className="text-foreground">neo</span>
-          <span className="text-accent-green">Net</span>
+        <a href="#top" className="flex items-center gap-2.5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">
+            <Image src="/neonet.png" alt="neoNet logo" width={20} height={20} className="object-contain" />
+          </div>
+          <span className="text-sm font-medium">neoNet</span>
         </a>
 
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
@@ -63,12 +62,12 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 md:flex">
-          <Button size="sm" variant="ghost" asChild>
-            <a href="https://github.com/Panda-0x01/neoNet" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </Button>
-          <Button size="sm" asChild>
-            <a href="#cli">Get Started</a>
+        <div className="hidden items-center gap-3 md:flex">
+          <a href="https://github.com/Panda-0x01/neoNet" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            GitHub
+          </a>
+          <Button size="sm" className="rounded-full px-4" asChild>
+            <a href="#cli">Start scanning</a>
           </Button>
         </div>
 
