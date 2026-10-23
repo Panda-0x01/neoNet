@@ -34,7 +34,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-xl"
+          ? "border-b border-cyan-400/20 bg-background/70 backdrop-blur-xl"
           : "bg-transparent"
       )}
     >
@@ -43,8 +43,8 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
       >
         <a href="#top" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">
-            <Image src="/neonet.png" alt="neoNet logo" width={20} height={20} className="object-contain" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-400/10 ring-1 ring-cyan-400/40">
+            <Image src="/neonet.png" alt="neoNet logo" width={18} height={18} className="object-contain" />
           </div>
           <span className="text-sm font-medium">neoNet</span>
         </a>
@@ -67,7 +67,7 @@ export function Navbar() {
             GitHub
           </a>
           <Button size="sm" className="rounded-full px-4" asChild>
-            <a href="#cli">Start scanning</a>
+            <a href="#cli">Get started</a>
           </Button>
         </div>
 
