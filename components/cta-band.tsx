@@ -23,7 +23,7 @@ export function CtaBand() {
             Ready to start scanning?
           </h2>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Install neoNet, point it at infrastructure you're authorized to test,
+            Install neoNet, point it at infrastructure you&apos;re authorized to test,
             and get results in your terminal in seconds.
           </p>
           <div className="mt-8 w-full max-w-lg">
